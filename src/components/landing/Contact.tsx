@@ -11,19 +11,41 @@ const Contact = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate submission
-    setTimeout(() => {
-      setLoading(false);
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      company: formData.get("company") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error("Error al enviar");
+
       toast({
-        title: "Solicitud enviada",
-        description: "Te responderemos en menos de 24 horas.",
+        title: "¡Gracias!",
+        description: "Hemos recibido tu solicitud y te contactaremos pronto.",
       });
       (e.target as HTMLFormElement).reset();
-    }, 1000);
+    } catch {
+      toast({
+        title: "Error",
+        description: "No se pudo enviar tu solicitud. Intenta de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
