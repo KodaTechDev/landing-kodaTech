@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
 
 const painPoints = [
-  "Your team relies on spreadsheets to manage critical processes",
-  "Manual tasks consume hours of valuable time",
-  "Your tools don't integrate with each other",
-  "Your business lacks a proper digital platform",
-  "Scaling operations feels impossible",
+  "Tu equipo depende de hojas de cálculo para gestionar procesos críticos",
+  "Las tareas manuales consumen horas de tiempo valioso",
+  "Tus herramientas no se integran entre sí",
+  "Tu negocio no cuenta con una plataforma digital adecuada",
+  "Escalar las operaciones se siente imposible",
 ];
 
 const Problem = () => {
@@ -20,7 +20,7 @@ const Problem = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Is your business limited by outdated systems?
+            ¿Tu negocio está limitado por sistemas obsoletos?
           </h2>
         </motion.div>
 
@@ -46,7 +46,7 @@ const Problem = () => {
           viewport={{ once: true }}
           className="mt-10 text-center text-muted-foreground text-lg"
         >
-          These problems are common — but they are solvable with the right technology.
+          Estos problemas son comunes — pero tienen solución con la tecnología adecuada.
         </motion.p>
       </div>
     </section>

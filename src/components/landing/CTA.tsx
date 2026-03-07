@@ -13,14 +13,14 @@ const CTA = () => {
           className="max-w-2xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Let's build the system your business actually needs
+            Construyamos el sistema que tu negocio realmente necesita
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            Tell us about your business challenge and we'll help you design the right digital solution.
+            Cuéntanos sobre el desafío de tu negocio y te ayudaremos a diseñar la solución digital ideal.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="px-8 gap-2 text-base">
-              Schedule a Free Consultation <ArrowRight size={16} />
+              Agenda una Consulta Gratis <ArrowRight size={16} />
             </Button>
           </div>
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">

@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const points = [
-  "Custom solutions designed specifically for your business",
-  "No generic templates or one-size-fits-all software",
-  "Scalable architecture built for growth",
-  "Clean, maintainable, high-quality code",
-  "Direct collaboration with experienced developers",
-  "Technology that supports your business goals",
+  "Soluciones personalizadas diseñadas específicamente para tu negocio",
+  "Sin plantillas genéricas ni software estándar",
+  "Arquitectura escalable construida para crecer",
+  "Código limpio, mantenible y de alta calidad",
+  "Colaboración directa con desarrolladores experimentados",
+  "Tecnología que impulsa tus objetivos de negocio",
 ];
 
 const ValueProp = () => {
@@ -21,7 +21,7 @@ const ValueProp = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Why companies choose KodaTech
+            Por qué las empresas eligen KodaTech
           </h2>
         </motion.div>
 

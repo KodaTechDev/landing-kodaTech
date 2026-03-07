@@ -6,7 +6,7 @@ const Footer = () => {
           Koda<span className="text-primary">Tech</span>
         </a>
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} KodaTech. All rights reserved.
+          © {new Date().getFullYear()} KodaTech. Todos los derechos reservados.
         </p>
         <a
           href="mailto:contacto@kodatech.dev"

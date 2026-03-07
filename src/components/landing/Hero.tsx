@@ -16,8 +16,8 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-foreground"
         >
-          Turn Business Problems Into{" "}
-          <span className="text-primary">Powerful Software</span>
+          Transformamos Problemas de Negocio en{" "}
+          <span className="text-primary">Software Poderoso</span>
         </motion.h1>
 
         <motion.p
@@ -26,7 +26,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
-          At KodaTech we build custom digital solutions that automate operations and create web and mobile platforms that your team and customers will actually love to use.
+          En KodaTech construimos soluciones digitales a medida que automatizan operaciones y crean plataformas web y móviles que tu equipo y tus clientes realmente disfrutarán usar.
         </motion.p>
 
         <motion.p
@@ -35,7 +35,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-4 text-sm text-muted-foreground"
         >
-          Software engineers building robust solutions for real businesses.
+          Ingenieros de software construyendo soluciones robustas para empresas reales.
         </motion.p>
 
         <motion.div
@@ -45,10 +45,10 @@ const Hero = () => {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button size="lg" className="px-8 gap-2 text-base">
-            Schedule a Free Consultation <ArrowRight size={16} />
+            Agenda una Consulta Gratis <ArrowRight size={16} />
           </Button>
           <Button variant="outline" size="lg" className="px-8 gap-2 text-base">
-            <MessageSquare size={16} /> Tell Us About Your Project
+            <MessageSquare size={16} /> Cuéntanos Sobre Tu Proyecto
           </Button>
         </motion.div>
       </div>
