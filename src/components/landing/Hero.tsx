@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageSquare } from "lucide-react";
 
 const Hero = () => {
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -29,28 +33,28 @@ const Hero = () => {
           En KodaTech construimos soluciones digitales a medida que automatizan operaciones y crean plataformas web y móviles que tu equipo y tus clientes realmente disfrutarán usar.
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 text-sm text-muted-foreground"
-        >
-          Ingenieros de software construyendo soluciones robustas para empresas reales.
-        </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.25 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-10"
         >
-          <Button size="lg" className="px-8 gap-2 text-base">
-            Agenda una Consulta Gratis <ArrowRight size={16} />
-          </Button>
-          <Button variant="outline" size="lg" className="px-8 gap-2 text-base">
-            <MessageSquare size={16} /> Cuéntanos Sobre Tu Proyecto
+          <Button size="lg" className="px-8 gap-2 text-base" onClick={scrollToContact}>
+            Agenda una Consulta Gratuita <ArrowRight size={16} />
           </Button>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-5 text-sm text-muted-foreground"
+        >
+          O escríbenos directamente a{" "}
+          <a href="mailto:contacto@kodatech.dev" className="text-foreground hover:text-primary transition-colors underline underline-offset-2">
+            contacto@kodatech.dev
+          </a>
+        </motion.p>
       </div>
     </section>
   );

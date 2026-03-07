@@ -5,7 +5,7 @@ import Solutions from "@/components/landing/Solutions";
 import ValueProp from "@/components/landing/ValueProp";
 import Process from "@/components/landing/Process";
 import Story from "@/components/landing/Story";
-import CTA from "@/components/landing/CTA";
+import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => {
@@ -18,7 +18,7 @@ const Index = () => {
       <ValueProp />
       <Process />
       <Story />
-      <CTA />
+      <Contact />
       <Footer />
     </div>
   );
