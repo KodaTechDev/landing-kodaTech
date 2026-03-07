@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Solutions", href: "#solutions" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
+  { label: "Soluciones", href: "#solutions" },
+  { label: "Proceso", href: "#process" },
+  { label: "Nosotros", href: "#about" },
 ];
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button size="sm" className="px-5">Schedule a Free Consultation</Button>
+          <Button size="sm" className="px-5">Agenda una Consulta Gratis</Button>
         </div>
 
         <button
@@ -62,7 +62,7 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full">Schedule a Free Consultation</Button>
+              <Button size="sm" className="w-full">Agenda una Consulta Gratis</Button>
             </div>
           </motion.div>
         )}

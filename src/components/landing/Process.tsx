@@ -3,23 +3,23 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Discovery",
-    description: "We understand your business operations and identify opportunities for automation.",
+    title: "Descubrimiento",
+    description: "Entendemos las operaciones de tu negocio e identificamos oportunidades de automatización.",
   },
   {
     number: "02",
-    title: "Architecture",
-    description: "We design the best technical solution for your needs.",
+    title: "Arquitectura",
+    description: "Diseñamos la mejor solución técnica para tus necesidades.",
   },
   {
     number: "03",
-    title: "Development",
-    description: "We build scalable and reliable software.",
+    title: "Desarrollo",
+    description: "Construimos software escalable y confiable.",
   },
   {
     number: "04",
-    title: "Launch & Support",
-    description: "We deploy your system and support its evolution as your business grows.",
+    title: "Lanzamiento y Soporte",
+    description: "Desplegamos tu sistema y acompañamos su evolución a medida que tu negocio crece.",
   },
 ];
 
@@ -34,7 +34,7 @@ const Process = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Our development process
+            Nuestro proceso de desarrollo
           </h2>
         </motion.div>
 

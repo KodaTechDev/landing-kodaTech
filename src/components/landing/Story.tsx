@@ -10,17 +10,17 @@ const Story = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Built by engineers who believe software should solve real problems
+            Construido por ingenieros que creen que el software debe resolver problemas reales
           </h2>
           <div className="mt-8 space-y-4 text-muted-foreground text-lg leading-relaxed">
             <p>
-              At KodaTech we believe technology should simplify business, not complicate it.
+              En KodaTech creemos que la tecnología debe simplificar los negocios, no complicarlos.
             </p>
             <p>
-              We combine strong technical foundations with a practical mindset focused on delivering real results.
+              Combinamos bases técnicas sólidas con una mentalidad práctica enfocada en entregar resultados reales.
             </p>
             <p>
-              From Caracas to the world, we help companies scale with clean code, practical solutions and reliable software systems.
+              Desde Caracas al mundo, ayudamos a empresas a escalar con código limpio, soluciones prácticas y sistemas de software confiables.
             </p>
           </div>
         </motion.div>

@@ -4,28 +4,28 @@ import { Cog, Globe, Smartphone, Layers, Users } from "lucide-react";
 const solutions = [
   {
     icon: Cog,
-    title: "Process Automation",
-    description: "We transform manual workflows into efficient automated systems.",
+    title: "Automatización de Procesos",
+    description: "Transformamos flujos de trabajo manuales en sistemas automatizados y eficientes.",
   },
   {
     icon: Globe,
-    title: "Custom Web Platforms",
-    description: "We build platforms tailored to the real operations of your business.",
+    title: "Plataformas Web a Medida",
+    description: "Construimos plataformas adaptadas a las operaciones reales de tu negocio.",
   },
   {
     icon: Smartphone,
-    title: "Mobile Applications",
-    description: "Apps that allow your customers or team to interact with your services anywhere.",
+    title: "Aplicaciones Móviles",
+    description: "Apps que permiten a tus clientes o equipo interactuar con tus servicios desde cualquier lugar.",
   },
   {
     icon: Layers,
-    title: "Digital Business Systems",
-    description: "Custom tools designed specifically for your company processes.",
+    title: "Sistemas Digitales Empresariales",
+    description: "Herramientas personalizadas diseñadas específicamente para los procesos de tu empresa.",
   },
   {
     icon: Users,
-    title: "Client Portals",
-    description: "Platforms where your customers can interact with your business online.",
+    title: "Portales de Clientes",
+    description: "Plataformas donde tus clientes pueden interactuar con tu negocio en línea.",
   },
 ];
 
@@ -40,7 +40,7 @@ const Solutions = () => {
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Custom software built around your business
+            Software a medida construido alrededor de tu negocio
           </h2>
         </motion.div>
 
