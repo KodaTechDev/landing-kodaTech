@@ -62,7 +62,7 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full">Agenda una Consulta Gratis</Button>
+              <Button size="sm" className="w-full" onClick={() => { setMobileOpen(false); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>Agenda una Consulta Gratis</Button>
             </div>
           </motion.div>
         )}
