@@ -4,10 +4,9 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Process", href: "#process" },
+  { label: "About", href: "#about" },
 ];
 
 const Navbar = () => {
@@ -17,7 +16,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
         <a href="#" className="font-display text-xl font-bold tracking-tight text-foreground">
-          Koda<span className="text-primary">tech</span>
+          Koda<span className="text-primary">Tech</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -33,8 +32,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm">Log in</Button>
-          <Button size="sm">Get Started</Button>
+          <Button size="sm" className="px-5">Schedule a Free Consultation</Button>
         </div>
 
         <button
@@ -64,7 +62,7 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full">Get Started</Button>
+              <Button size="sm" className="w-full">Schedule a Free Consultation</Button>
             </div>
           </motion.div>
         )}

@@ -1,50 +1,19 @@
-const footerLinks = {
-  Product: ["Features", "Pricing", "Integrations", "Changelog"],
-  Company: ["About", "Blog", "Careers", "Contact"],
-  Resources: ["Documentation", "API Reference", "Community", "Status"],
-  Legal: ["Privacy", "Terms", "Security", "GDPR"],
-};
-
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-card py-16">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-          <div className="col-span-2 md:col-span-1">
-            <a href="#" className="font-display text-xl font-bold tracking-tight text-foreground">
-              Koda<span className="text-primary">tech</span>
-            </a>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              Building the future of enterprise technology, one solution at a time.
-            </p>
-          </div>
-
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="text-sm font-semibold text-foreground mb-4">{category}</h4>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Kodatech. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Twitter</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">GitHub</a>
-          </div>
-        </div>
+    <footer className="border-t border-border py-10">
+      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <a href="#" className="font-display text-lg font-bold tracking-tight text-foreground">
+          Koda<span className="text-primary">Tech</span>
+        </a>
+        <p className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} KodaTech. All rights reserved.
+        </p>
+        <a
+          href="mailto:contacto@kodatech.dev"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          contacto@kodatech.dev
+        </a>
       </div>
     </footer>
   );
