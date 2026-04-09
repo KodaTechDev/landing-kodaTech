@@ -69,6 +69,25 @@ const Navbar = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  /** Scroll fiable en móvil (evita scrollIntoView roto en algunos WebKit + layout tras cerrar el menú). */
+  const scrollPageToSection = useCallback((sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (!el) return;
+    const navReserve = Math.min(100, Math.max(72, Math.round(window.innerHeight * 0.08)));
+    const y = el.getBoundingClientRect().top + window.scrollY - navReserve;
+    window.scrollTo({ top: Math.max(0, y), left: 0, behavior: "smooth" });
+    window.history.replaceState(null, "", `#${sectionId}`);
+  }, []);
+
+  /** Ítems del menú móvil como <button>: en táctil, <a href="#…"> + preventDefault a veces no dispara bien el handler. */
+  const goToSectionMobile = useCallback(
+    (sectionId: string) => {
+      setMobileOpen(false);
+      window.setTimeout(() => scrollPageToSection(sectionId), 120);
+    },
+    [scrollPageToSection],
+  );
+
   /**
    * solidLight = sobre hero / nosotros: degradado gris OPACO (sin alpha en el relleno).
    * else = cristal sobre secciones claras.
@@ -154,21 +173,22 @@ const Navbar = () => {
                   {navLinks.map((link) => {
                     const active = activeSection === link.id;
                     return (
-                      <a
+                      <button
                         key={link.id}
-                        href={link.href}
-                        className={`text-[0.9375rem] font-medium py-2.5 px-2 rounded-lg flex flex-col gap-1 border-l-[3px] transition-colors ${
+                        type="button"
+                        className={`w-full text-left touch-manipulation appearance-none bg-transparent text-[0.9375rem] font-medium py-2.5 px-2 rounded-lg flex flex-col gap-1 border-0 border-l-[3px] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white/90 ${
                           active
                             ? "text-slate-900 bg-white/80 border-accent"
                             : "text-slate-700 border-transparent hover:bg-white/50"
                         }`}
-                        onClick={() => setMobileOpen(false)}
+                        aria-current={active ? "true" : undefined}
+                        onClick={() => goToSectionMobile(link.id)}
                       >
                         {link.label}
                         <span
                           className={`h-[2px] w-8 rounded-full bg-accent ml-0.5 ${active ? "opacity-100" : "opacity-0"}`}
                         />
-                      </a>
+                      </button>
                     );
                   })}
                   <Button
