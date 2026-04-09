@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send } from "lucide-react";
+import { Send, Shield, Clock, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -33,14 +33,14 @@ const Contact = () => {
       if (!response.ok) throw new Error("Error al enviar");
 
       toast({
-        title: "¡Gracias!",
-        description: "Hemos recibido tu solicitud y te contactaremos pronto.",
+        title: "¡Solicitud recibida!",
+        description: "Te contactaremos en menos de 24 horas.",
       });
       (e.target as HTMLFormElement).reset();
     } catch {
       toast({
         title: "Error",
-        description: "No se pudo enviar tu solicitud. Intenta de nuevo.",
+        description: "No se pudo enviar. Intenta de nuevo o escríbenos a contacto@kodatech.dev.",
         variant: "destructive",
       });
     } finally {
@@ -49,58 +49,106 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28">
+    <section id="contact" className="py-20 md:py-28 bg-section-alt">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-lg mx-auto"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground text-center">
-            Construyamos el sistema que tu negocio realmente necesita
-          </h2>
-          <p className="mt-4 text-muted-foreground text-center leading-relaxed">
-            Cuéntanos sobre el desafío de tu negocio y te ayudaremos a diseñar la solución digital ideal.
-          </p>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-5 gap-12 md:gap-16 items-start">
+          {/* Left: persuasion column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="md:col-span-2"
+          >
+            <span className="text-[0.8125rem] font-semibold tracking-widest uppercase text-accent">Empieza hoy</span>
+            <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-foreground leading-tight text-balance">
+              Hablemos de cómo automatizar tu negocio
+            </h2>
+            <p className="mt-4 text-muted-foreground text-[1.0625rem] leading-relaxed">
+              En una consulta de 30 minutos analizamos tu operación y te mostramos qué se puede automatizar primero.
+            </p>
 
-          <form onSubmit={handleSubmit} className="mt-10 space-y-5">
-            <div className="space-y-2">
-              <Label htmlFor="name">Nombre</Label>
-              <Input id="name" name="name" placeholder="Tu nombre" required maxLength={100} />
+            <div className="mt-8 space-y-4">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 size={18} className="text-koda-cyan shrink-0 mt-0.5" />
+                <p className="text-[0.9375rem] md:text-base text-muted-foreground leading-relaxed">
+                  <strong className="text-foreground">Diagnóstico gratuito</strong> — Identificamos tus mayores oportunidades de mejora
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 size={18} className="text-koda-cyan shrink-0 mt-0.5" />
+                <p className="text-[0.9375rem] md:text-base text-muted-foreground leading-relaxed">
+                  <strong className="text-foreground">Sin compromiso</strong> — No hay contrato ni obligación. Solo una conversación
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 size={18} className="text-koda-cyan shrink-0 mt-0.5" />
+                <p className="text-[0.9375rem] md:text-base text-muted-foreground leading-relaxed">
+                  <strong className="text-foreground">Respuesta en 24h</strong> — Te contactamos al día siguiente con una propuesta inicial
+                </p>
+              </div>
             </div>
+          </motion.div>
 
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" placeholder="tu@email.com" required maxLength={255} />
+          {/* Right: form */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15, duration: 0.7 }}
+            className="md:col-span-3"
+          >
+            <div className="p-6 sm:p-8 rounded-2xl bg-card border border-border shadow-sm">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="name" className="text-sm font-semibold">Nombre</Label>
+                    <Input id="name" name="name" placeholder="Tu nombre" required maxLength={100} className="h-10" />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="email" className="text-sm font-semibold">Email</Label>
+                    <Input id="email" name="email" type="email" placeholder="tu@empresa.com" required maxLength={255} className="h-10" />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <Label htmlFor="company" className="text-sm font-semibold">Empresa</Label>
+                  <Input id="company" name="company" placeholder="Nombre de tu empresa" maxLength={100} className="h-10" />
+                </div>
+
+                <div className="space-y-1.5">
+                  <Label htmlFor="message" className="text-sm font-semibold">¿Qué proceso quieres mejorar?</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Ejemplo: Gestiono pedidos por WhatsApp y necesito un sistema para organizarlos y darles seguimiento..."
+                    required
+                    maxLength={1000}
+                    className="min-h-[100px] resize-none"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full h-12 gap-2 text-[0.938rem] font-semibold bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20 hover:translate-y-[-1px] transition-all duration-200"
+                  disabled={loading}
+                >
+                  {loading ? "Enviando..." : "Solicitar consulta gratuita"} <Send size={15} />
+                </Button>
+              </form>
+
+              <div className="mt-4 flex items-center justify-center gap-5 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1.5">
+                  <Clock size={14} /> 24h respuesta
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Shield size={14} /> Sin compromiso
+                </span>
+              </div>
             </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="company">Empresa</Label>
-              <Input id="company" name="company" placeholder="Nombre de tu empresa" maxLength={100} />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="message">Cuéntanos sobre tu proyecto</Label>
-              <Textarea
-                id="message"
-                name="message"
-                placeholder="Describe brevemente lo que necesitas..."
-                required
-                maxLength={1000}
-                className="min-h-[120px] resize-none"
-              />
-            </div>
-
-            <Button type="submit" size="lg" className="w-full gap-2 text-base" disabled={loading}>
-              {loading ? "Enviando..." : "Enviar solicitud"} <Send size={16} />
-            </Button>
-          </form>
-
-          <p className="mt-5 text-sm text-muted-foreground text-center">
-            Te responderemos en menos de 24 horas.
-          </p>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
