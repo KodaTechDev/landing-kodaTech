@@ -7,7 +7,7 @@ const Story = () => {
   };
 
   return (
-    <section id="about" className="relative py-20 md:py-28 bg-hero-bg overflow-hidden cv-auto">
+    <section id="about" className="relative py-20 md:py-28 bg-hero-bg overflow-hidden">
       {/* Ambient effects */}
       <div className="absolute inset-0">
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-accent/[0.05] blur-2xl md:blur-[100px] transform-gpu" />

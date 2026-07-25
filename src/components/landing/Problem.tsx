@@ -43,7 +43,7 @@ const painPoints = [
 
 const Problem = () => {
   return (
-    <section className="py-20 md:py-28 cv-auto">
+    <section className="py-20 md:py-28">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

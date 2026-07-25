@@ -112,12 +112,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Skip render cost for offscreen sections until near viewport */
-.cv-auto {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 800px;
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
