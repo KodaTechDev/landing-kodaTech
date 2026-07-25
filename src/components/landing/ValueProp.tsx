@@ -36,7 +36,7 @@ const points = [
 
 const ValueProp = () => {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 cv-auto">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div
