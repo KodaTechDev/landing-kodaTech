@@ -7,11 +7,11 @@ const Story = () => {
   };
 
   return (
-    <section id="about" className="relative py-20 md:py-28 bg-hero-bg overflow-hidden">
+    <section id="about" className="relative py-20 md:py-28 bg-hero-bg overflow-hidden cv-auto">
       {/* Ambient effects */}
       <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-accent/[0.05] blur-[100px]" />
-        <div className="absolute top-0 right-1/4 w-[300px] h-[300px] rounded-full bg-koda-cyan/[0.04] blur-[80px]" />
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-accent/[0.05] blur-2xl md:blur-[100px] transform-gpu" />
+        <div className="hidden sm:block absolute top-0 right-1/4 w-[300px] h-[300px] rounded-full bg-koda-cyan/[0.04] blur-2xl md:blur-[80px] transform-gpu" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">

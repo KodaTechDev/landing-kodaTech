@@ -17,9 +17,9 @@ const Hero = () => {
     <section id="hero" className="relative min-h-[90vh] flex items-center overflow-hidden bg-hero-bg">
       {/* Ambient glow effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-accent/[0.07] blur-[120px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full bg-koda-cyan/[0.06] blur-[100px] animate-pulse-glow" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/[0.04] blur-[150px]" />
+        <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-accent/[0.07] blur-3xl md:blur-[120px] animate-pulse-glow transform-gpu" />
+        <div className="hidden sm:block absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full bg-koda-cyan/[0.06] blur-3xl md:blur-[100px] animate-pulse-glow transform-gpu" style={{ animationDelay: "2s" }} />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/[0.04] blur-[150px] transform-gpu" />
         {/* Grid texture */}
         <div
           className="absolute inset-0 opacity-[0.03]"
