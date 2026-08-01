@@ -2,12 +2,14 @@ import { useState, useEffect, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BrandBannerLogo } from "@/components/landing/BrandBannerLogo";
 
 const navLinks = [
   { label: "Servicios", href: "#solutions", id: "solutions" as const },
   { label: "Proceso", href: "#process", id: "process" as const },
   { label: "Nosotros", href: "#about", id: "about" as const },
+  { label: "Proyectos", href: "#projects", id: "projects" as const },
 ];
 
 /**
@@ -34,6 +36,9 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [solidLight, setSolidLight] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
 
   const updateActiveFromScroll = useCallback(() => {
     const y = window.scrollY;
@@ -66,6 +71,10 @@ const Navbar = () => {
 
   const scrollToContact = () => {
     setMobileOpen(false);
+    if (!isHome) {
+      navigate("/#contact");
+      return;
+    }
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -83,9 +92,13 @@ const Navbar = () => {
   const goToSectionMobile = useCallback(
     (sectionId: string) => {
       setMobileOpen(false);
+      if (!isHome) {
+        navigate(`/#${sectionId}`);
+        return;
+      }
       window.setTimeout(() => scrollPageToSection(sectionId), 120);
     },
-    [scrollPageToSection],
+    [isHome, navigate, scrollPageToSection],
   );
 
   /**
@@ -115,19 +128,22 @@ const Navbar = () => {
           } ${navShell}`}
         >
           <div className="flex items-center justify-between min-h-[3rem] sm:min-h-[3.5rem] py-1 px-3 sm:px-5">
-            <a href="#" className="flex items-center shrink-0 min-w-0 ml-0.5 sm:ml-1">
-              <BrandBannerLogo chip="md" />
-            </a>
+            {isHome ? (
+              <a href="#" className="flex items-center shrink-0 min-w-0 ml-0.5 sm:ml-1">
+                <BrandBannerLogo chip="md" />
+              </a>
+            ) : (
+              <Link to="/" className="flex items-center shrink-0 min-w-0 ml-0.5 sm:ml-1">
+                <BrandBannerLogo chip="md" />
+              </Link>
+            )}
 
             <div className="hidden md:flex items-center gap-0.5 translate-y-1 sm:translate-y-1.5">
               {navLinks.map((link) => {
-                const active = activeSection === link.id;
-                return (
-                  <a
-                    key={link.id}
-                    href={link.href}
-                    className={`flex flex-col items-center px-3 py-1.5 rounded-xl transition-colors min-w-[5.5rem] ${linkStyles(active)}`}
-                  >
+                const active = isHome && activeSection === link.id;
+                const linkClass = `flex flex-col items-center px-3 py-1.5 rounded-xl transition-colors min-w-[5.5rem] ${linkStyles(active)}`;
+                const content = (
+                  <>
                     <span className="text-[0.9375rem] font-medium leading-tight">{link.label}</span>
                     <span
                       className={`mt-1.5 h-[3px] w-8 rounded-full bg-accent transition-opacity duration-200 ${
@@ -135,7 +151,16 @@ const Navbar = () => {
                       }`}
                       aria-hidden
                     />
+                  </>
+                );
+                return isHome ? (
+                  <a key={link.id} href={link.href} className={linkClass}>
+                    {content}
                   </a>
+                ) : (
+                  <Link key={link.id} to={`/${link.href}`} className={linkClass}>
+                    {content}
+                  </Link>
                 );
               })}
             </div>
