@@ -6,6 +6,7 @@ import Solutions from "@/components/landing/Solutions";
 import ValueProp from "@/components/landing/ValueProp";
 import Process from "@/components/landing/Process";
 import Story from "@/components/landing/Story";
+import Projects from "@/components/landing/Projects";
 import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 
@@ -20,6 +21,7 @@ const Index = () => {
       <ValueProp />
       <Process />
       <Story />
+      <Projects />
       <Contact />
       <Footer />
     </div>
