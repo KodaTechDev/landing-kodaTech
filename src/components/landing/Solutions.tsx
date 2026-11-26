@@ -1,37 +1,43 @@
 import { motion } from "framer-motion";
-import { Cog, Globe, Smartphone, Layers, Users, ArrowRight } from "lucide-react";
+import { MessageCircle, Bot, Cog, Layers, Globe, Smartphone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const solutions = [
   {
+    icon: MessageCircle,
+    title: "Automatización de WhatsApp",
+    result: "Vende sin esperar respuesta",
+    description: "Respuestas, catálogo y pedidos automáticos con IA, conectados a tu inventario y tus pagos.",
+  },
+  {
+    icon: Bot,
+    title: "Agentes de IA para empresas",
+    result: "IA que trabaja en tu operación",
+    description: "Agentes de IA que trabajan dentro de tus procesos, con el contexto de tu negocio, no por separado.",
+  },
+  {
     icon: Cog,
     title: "Automatización de procesos",
-    result: "Ahorra +20 horas semanales",
+    result: "Menos horas en tareas manuales",
     description: "Reemplazamos tareas manuales repetitivas por flujos automáticos. Tu equipo deja de copiar datos entre sistemas y se enfoca en crecer el negocio.",
   },
   {
+    icon: Layers,
+    title: "Sistemas administrativos e inventario",
+    result: "Todo conectado, datos en tiempo real",
+    description: "Herramientas que unifican tus procesos internos: inventario, pedidos, facturación, reportes. Un sistema, cero silos.",
+  },
+  {
     icon: Globe,
-    title: "Plataformas web a medida",
+    title: "Plataformas web y portales de clientes",
     result: "Control total de tu operación",
-    description: "Sistemas web construidos alrededor de cómo tu negocio realmente funciona. Dashboards, reportes y gestión en un solo lugar.",
+    description: "Sistemas web construidos alrededor de cómo tu negocio realmente funciona, con dashboards, reportes y gestión en un solo lugar. Tus clientes consultan, piden y dan seguimiento por su cuenta.",
   },
   {
     icon: Smartphone,
     title: "Aplicaciones móviles",
     result: "Tu negocio en el bolsillo",
     description: "Apps para que tu equipo y clientes interactúen con tus servicios desde cualquier lugar, sin depender de WhatsApp.",
-  },
-  {
-    icon: Layers,
-    title: "Sistemas empresariales",
-    result: "Todo conectado, datos en tiempo real",
-    description: "Herramientas que unifican tus procesos internos: inventario, pedidos, facturación, reportes. Un sistema, cero silos.",
-  },
-  {
-    icon: Users,
-    title: "Portales de clientes",
-    result: "Menos llamadas, más autonomía",
-    description: "Tus clientes consultan, piden y dan seguimiento por su cuenta. Reduces la carga operativa y mejoras la experiencia.",
   },
 ];
 
@@ -67,7 +73,7 @@ const Solutions = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 + i * 0.1, duration: 0.6 }}
-              className="group relative p-6 rounded-2xl bg-card border border-slate-200/90 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+              className="group relative p-6 rounded-2xl bg-card border border-slate-200/90 hover:border-slate-300 hover:shadow-md transition-[border-color,box-shadow] duration-300"
             >
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-4">
                 <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center group-hover:bg-primary/12 transition-colors shrink-0">

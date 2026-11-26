@@ -31,7 +31,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 pt-28 sm:pt-32 pb-16 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,11 +46,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold tracking-tight leading-[1.08] text-white text-balance"
+            className="text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] text-white text-balance"
           >
-            Tu operación manual se convierte en un{" "}
+            Desarrollo de software a medida: tu operación manual convertida en{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent to-koda-cyan">
-              sistema que trabaja por ti
+              un sistema que trabaja por ti
             </span>
           </motion.h1>
 

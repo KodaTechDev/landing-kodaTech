@@ -6,38 +6,50 @@ export interface Project {
   tag: string;
   url?: string;
   logo?: string;
+  image?: ProjectImage;
   accent: "orange" | "cyan";
   body: string;
   stack: string[];
 }
+
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+/** Etiqueta de la tarjeta "Sistema de auditoría interna". Cámbiala aquí. */
+export const AUDIT_PROJECT_TAG = "Firma de consultoría";
 
 export const OWN_PROJECTS: Project[] = [
   {
     icon: MessageSquare,
     name: "Katalify",
     tag: "KodaTech · Propio",
-    url: "https://www.katalify.app",
+    url: "https://katalify.app",
+    image: {
+      src: "/images/proyectos/katalify-catalogo-digital-whatsapp.webp",
+      alt: "Catálogo digital de Katalify para vender por WhatsApp",
+      width: 1488,
+      height: 930,
+    },
     accent: "orange",
     body: "Plataforma de catálogos digitales para WhatsApp: convierte conversaciones en ventas con catálogos que se crean y comparten en minutos.",
     stack: ["Next.js 14", "NestJS", "PostgreSQL", "Turborepo"],
   },
   {
-    icon: MessageSquare,
-    name: "Club Vehículos",
-    tag: "KodaTech · Propio",
-    url: "https://alpha.clubvehiculos.com/",
-    accent: "orange",
-    body: "Marketplace automotriz dominicano: talleres y tiendas publican ofertas que los usuarios compran en línea y redimen con cupón QR. Gestiona pagos (CardNet y PayPal) y liquidación a comercios.",
-    stack: ["Next.js 14", "NestJS", "PostgreSQL", "Turborepo"],
-  },
-  {
     icon: Target,
-    name: "Auditoría Interna",
-    tag: "KodaTech · Propio",
-    url: "https://github.com/asdruprojects/Frontend-internal-audit-system",
-    logo: "/logos/jdg.png",
+    name: "Sistema de auditoría interna",
+    tag: AUDIT_PROJECT_TAG,
+    image: {
+      src: "/images/proyectos/sistema-auditoria-interna-riesgos.webp",
+      alt: "Mapa de calor de riesgos del sistema de auditoría interna",
+      width: 1551,
+      height: 870,
+    },
     accent: "cyan",
-    body: "Gestión de auditorías internas basadas en riesgos, alineado con ISO 31000 e ISO 19011: procesos, riesgos y controles con matrices, mapas de calor y dashboard de indicadores.",
+    body: "Desarrollado para una firma de consultoría: gestión de auditorías basadas en riesgos, alineado con ISO 31000 e ISO 19011, con matrices de riesgo, mapas de calor y dashboard de indicadores.",
     stack: ["Next.js", "PostgreSQL", "Dashboard", "ISO 31000/19011"],
   },
 ];
