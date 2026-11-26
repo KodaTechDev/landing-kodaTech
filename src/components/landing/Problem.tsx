@@ -69,7 +69,7 @@ const Problem = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 + i * 0.1, duration: 0.6 }}
-              className="group p-5 rounded-xl border border-border bg-card hover:border-accent/25 hover:shadow-sm transition-all duration-200"
+              className="group p-5 rounded-xl border border-border bg-card hover:border-accent/25 hover:shadow-sm transition-[border-color,box-shadow] duration-200"
             >
               <div className="w-9 h-9 rounded-lg bg-accent/8 flex items-center justify-center mb-3.5 group-hover:bg-accent/12 transition-colors">
                 <point.icon size={17} className="text-accent" />
